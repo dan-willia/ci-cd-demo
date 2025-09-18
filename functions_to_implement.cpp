@@ -21,7 +21,7 @@ std::vector<std::string> Split(std::string whole, std::string separator)
 std::string RemoveAllSubstrings(std::string s1, std::string s2)
 {
 	std::string ret;
-	for (int i=0; i<s1.length(); i++) {
+	for (int i=0; i<(int)s1.length(); i++) {
 		// iterate through; if current letter matches start of s2, check if substring matches s2
 		// if it does, then skip over it in the iteration
 		// if it doesn't, then add letters to return string
@@ -44,7 +44,7 @@ std::string RemoveAllSubstrings(std::string s1, std::string s2)
 // takes two strings and returns a new string that is the result of removing the first occurrence of s2 from s1.
 std::string RemoveFirstSubstring(std::string s1, std::string s2)
 {
-	for (int i=0; i<s1.length() - s2.length() + 1; i++) {
+	for (int i=0; i<(int)s1.length() - s2.length() + 1; i++) {
 		if (s1[i] == s2[0]) {
 			std::string sub = s1.substr(i, i + s2.length());
 			if (sub == s2) {
